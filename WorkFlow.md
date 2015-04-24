@@ -105,7 +105,7 @@ git push -u origin featurename
 
 12. You will be transfered to the pull request page where you need to click the green button to send it to the maintainers of the main repo to accept it.
     ![selection_022](https://cloud.githubusercontent.com/assets/5361308/7255725/c64df81c-e853-11e4-96d7-a01684b0265d.png)
-13. Now you should wait till the pull request is accepted to complete the next steps. If you want to work on a new feature in that time please follow the same steps again from number 1 to 12.
+13. Now you should wait till the pull request is accepted to complete the next steps. If you want to work on a new feature in that time please follow the same steps again from number 1 to 13.
 14. When the pull request is accepted you should go to your master branch and update it, delete the feature beanch as it is no longer needed, type the following
   
     ```
@@ -146,14 +146,16 @@ Thats it. Now you have the following commands (you can use them in the workflow 
 
 ##Workflow with Shortcuts
 
-Here we will use the shortcuts we added [here](#shortcuts) to simplify our workflow
+Here we will use the shortcuts we added [here](#shortcuts) to simplify our workflow.
 
-1. `git startf featurename`
-2. finish your code and commit regularly to your local branch
-3. `git pushf featurename`
-4. go to github and issue pull request
-5. wait your feature to get reviewed by maintainers and wait for it to get accepted. In the meanwhile you can start to work on new feature by following step 1-5.
-6. `git finishf featurename`
+So when evenr you want to work on something do the following (replace `featurename` with a descriptive name):
+
+1. Go to repo location in git bash and type `git startf featurename`
+2. Finish your code and commit regularly to your local branch
+3. Type `git pushf featurename` to push feature.
+4. Go to github and issue pull request as in steps [10-11-12] in [workflow](#workflow-shortcuts-exist-)
+5. Wait your feature to get reviewed by maintainers and wait for it to get accepted. In the meanwhile you can start to work on new feature by following step 1-5.
+6. When done, type `git finishf featurename` to update your master and remove the branch.
 
 
 [return to TOC](#table-of-contents)
