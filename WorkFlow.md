@@ -73,7 +73,6 @@ When there is a feature/bug you need to make/fix you should do that as follow (t
 
     ```
 git pull
-git remote prune origin
 git push
 ```
 4. You will be asked for user name and password, enter the email and password of your github account.
