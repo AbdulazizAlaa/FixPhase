@@ -6,8 +6,8 @@
 4. [Workflow](#workflow-shortcuts-exist-)
 5. [Shortcuts](#shortcuts)
 6. [Workflow with Shortcuts](#workflow-with-shortcuts)
-7. [Merging pull requests (for maintainers only)](#Merging-pull-requests-for-maintainers-only)
-8. [How to update for people who already have a fork](#How-to-update-for-people-who-already-have-a-fork)
+7. [Merging pull requests (for maintainers only)](#merging-pull-requests-for-maintainers-only)
+8. [How to update for people who already have a fork](#how-to-update-for-people-who-already-have-a-fork)
 
 
 ##Prerequisites
