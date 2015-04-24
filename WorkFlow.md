@@ -163,6 +163,10 @@ So when evenr you want to work on something do the following (replace `featurena
 
 ## Merging pull requests (for maintainers only)
 
+We should not merge pull request from github directly as this will mess up our history also we woudnlt be abel to test the code in pull request locally before mergin it, so we will follow these steps to merge a pull request:
+
+1. Open the pull request in github and open the commandline link as follow
+
 
 [return to TOC](#table-of-contents)
 
