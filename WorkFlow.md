@@ -130,9 +130,9 @@ Here we will make new git commands that will be shortcuts for our workflow steps
     ```
     [alias]
     ls = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-startf = !sh -c 'git checkout master && git pull && git push && git config --global credential.helper cache && git checkout -b $0'
-pushf  = !sh -c 'git checkout $0 && git push -u origin $0' 
-finishf = !sh -c 'git checkout $0 && git push --delete origin $0 && git checkout master && git branch -D $0 && git pull && git  git push'
+	startf = !sh -c 'git checkout master && git pull && git push && git config --global credential.helper cache && git checkout -b $0'
+	pushf  = !sh -c 'git checkout $0 && git push -u origin $0 && git config --global credential.helper cache' 
+	finishf = !sh -c 'git checkout $0  && git checkout master && git pull && git push && git config --global credential.helper cache && git push --delete origin $0 && git branch -D $0'
     ```
 
 Thats it. Now you have the following commands (you can use them in the workflow as described [here](#workflow-with-shortcuts)):
@@ -163,9 +163,32 @@ So when evenr you want to work on something do the following (replace `featurena
 
 ## Merging pull requests (for maintainers only)
 
-We should not merge pull request from github directly as this will mess up our history also we woudnlt be abel to test the code in pull request locally before mergin it, so we will follow these steps to merge a pull request:
+We should not merge pull request from github directly as this will mess up our history also we woudnlt be abel to test the code in pull request locally before merging it.
 
-1. Open the pull request in github and open the commandline link as follow
+First lets add more shortcuts that will help us in merging so add the follwing lines to your .gitconfig file under alias: (if you want to know how to add shortcuts refer to [this](#shortcuts))
+
+```
+getpull = !sh -c 'git remote add $0 $1 && git fetch $0 && git checkout -b $2 $0/$2'
+	mergepull = !sh -c 'git checkout master && git merge --ff-only $0 && git reset --hard HEAD && git merge --no-ff $0 && git push && git config --global credential.helper cache && git branch -D $0 '
+```
+
+Now to merge a pull request there are 2 things to make:
+
+1. Get the pull request branch locally to test using `git getpull <username> <url> <pull_branch_name>` those arguments can be found from the pull request page as show below
+
+    ![image](https://cloud.githubusercontent.com/assets/5361308/7321327/314713a8-eaaa-11e4-8359-7fa2af0f6c51.png)
+2. After testing it and being satisfied it is time to rebase with master so make sure you are on the pull request branch and type the follwoing solving any conflics arising
+
+    ```
+   git rebase master
+   ```
+3. It is time to merge with master and push: (this command wont work if the rebase was not doe successfuly)
+
+    ```
+    git mergepull <pull_branch_name>
+    ```
+
+
 
 
 [return to TOC](#table-of-contents)
