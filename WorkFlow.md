@@ -1,7 +1,7 @@
 ##Prerequisites
 
 None. But if you want to understand what is going on and how to use it correctly, which is a thing you will do sooner or later and sooner would be better, I recommend reading the first 3 chapters of this online book [Git-Book](http://git-scm.com/book/en/v2)  which won’t take more than 2 to 3 hours reading.
-[mylink](#Forking-the-repo)
+[mylink](#forking-the-repo)
 
 
 ##Requirements
