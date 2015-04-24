@@ -192,11 +192,12 @@ You should follow the following steps:
     git update-index --assume-unchanged fixphase/application/config/database.php
     ```
 4. We need to edit the shortcuts you have made before so follow [this](#shortcuts) replacing every thing you have put there before with the new code. If you have not made the shortcuts part then it is a good time to follow the instructions and make them because they simplify the commands for the workflow as described [here](#workflow-with-shortcuts).
-5. Now if you have any branch(feature) that you are already working on you need to do the following
+5. If you currently are not working on any feature and dont have any branch except the master branch you are done, otherwise continue to the next steps.
+6. Now if you have any branch(feature) that you are already working on you need to do the following 
 
     ```
     git checkout featurename
     git rebase master
     ```
-6. If you get conflicts in the previous commands, then seek for help by asking in the facebook group.
+7. If you get conflicts in the previous commands, then seek for help by asking in the facebook group.
 [return to TOC](#table-of-contents)
