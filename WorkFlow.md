@@ -161,8 +161,42 @@ So when evenr you want to work on something do the following (replace `featurena
 [return to TOC](#table-of-contents)
 
 
+## Merging pull requests (for maintainers only)
 
 
+[return to TOC](#table-of-contents)
 
 
+## How to update for people who already have a fork
 
+This part is only for the ones who had made their fork before we updated the workflow.
+
+You should follow the following steps:
+
+1. Go to git bash and type 
+
+    ```
+    git checkout master
+    git pull
+    ```
+2. Type the following ( mind that the following 2 commands may return an error just ignore the errors and keep going)
+
+    ```
+    git push --delete origin Development
+    git branch -D Development
+    ```
+3. `cd` to the root directory that contains the fixphase folder and type the following
+
+    ```
+    git checkout master
+    git update-index --assume-unchanged fixphase/application/config/database.php
+    ```
+4. We need to edit the shortcuts you have made before so follow [this](#shortcuts) replacing every thing you have put there before with the new code. If you have not made the shortcuts part then it is a good time to follow the instructions and make them because they simplify the commands for the workflow as described [here](#workflow-with-shortcuts).
+5. Now if you have any branch(feature) that you are already working on you need to do the following
+
+    ```
+    git checkout featurename
+    git rebase master
+    ```
+6. If you get conflicts in the previous commands, then seek for help by asking in the facebook group.
+[return to TOC](#table-of-contents)
