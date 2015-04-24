@@ -3,7 +3,7 @@
 1. [Prerequisites](#prerequisites)
 2. [Requirements](#requirements)
 3. [Forking the repo](#forking-the-repo)
-4. [Workflow](#workflow)
+4. [Workflow](#workflow-shortcuts-exist-)
 5. [Shortcuts](#shortcuts)
 6. [Workflow with Shortcuts](#workflow-with-shortcuts)
 7. [Merging pull requests (for maintainers only)](#Merging-pull-requests-for-maintainers-only)
