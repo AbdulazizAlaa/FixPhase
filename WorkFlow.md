@@ -168,25 +168,41 @@ We should not merge pull request from github directly as this will mess up our h
 First lets add more shortcuts that will help us in merging so add the follwing lines to your .gitconfig file under alias: (if you want to know how to add shortcuts refer to [this](#shortcuts))
 
 ```
-getpull = !sh -c 'git remote add $0 $1 && git fetch $0 && git checkout -b $2 $0/$2'
-	mergepull = !sh -c 'git checkout master && git merge --ff-only $0 && git reset --hard HEAD && git merge --no-ff $0 && git push && git config --global credential.helper cache && git branch -D $0 '
+getpull = "!sh -c 'git remote add $0 $1; git fetch $0 && git checkout -b $0-$2 $0/$2'"
+mergepull = !sh -c 'git checkout master && (git merge-base --is-ancestor master $0-$1 || (echo "rebase first" && false))  && git merge --no-ff -m "Merge pull request #$2 from $0/$1" $0-$1 && git push && git config --global credential.helper cache && git branch -D $0 '
 ```
 
-Now to merge a pull request there are 2 things to make:
+Before starting open your browser to the pull request page the picture below shows all the things we will use.
+![image](https://cloud.githubusercontent.com/assets/5361308/7332598/674a582a-eb4f-11e4-90d8-df9d881d7d32.png)
+![image](https://cloud.githubusercontent.com/assets/5361308/7332600/6b51b080-eb4f-11e4-92d9-721335b5ce5e.png)
 
-1. Get the pull request branch locally to test using `git getpull <username> <url> <pull_branch_name>` those arguments can be found from the pull request page as show below
 
-    ![image](https://cloud.githubusercontent.com/assets/5361308/7321327/314713a8-eaaa-11e4-8359-7fa2af0f6c51.png)
-2. After testing it and being satisfied it is time to rebase with master so make sure you are on the pull request branch and type the follwoing solving any conflics arising
+There are 2 things that should be done when merging a pull request:
+
+1. Get the pull request branch locally to test using `git getpull <user> <url> <pull_branch>` (get argumnets from picture), now you can test the branch locally and if there is something wrong head back to the pull request page and dicuss it with the developer.
+
+   
+    
+2. When you are done with testing and developer have made required changes if any, it is time to do the merge so lets first rebase the branch with master
 
     ```
    git rebase master
    ```
-3. It is time to merge with master and push: (this command wont work if the rebase was not doe successfuly)
+   then lets merge and push
 
     ```
-    git mergepull <pull_branch_name>
+    git mergepull <user> <pull_branch> <pull_id>
     ```
+    
+**NOTE**: it is possible when pushing to the remote that some one had made changes and it wont let you push till you sync with remote to do so type the following:
+
+```
+git checkout master
+git pull
+git rebase --preserve-merges origin/master
+```
+
+Solve any conflicts appearing then push again with `git push`
 
 
 
