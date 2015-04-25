@@ -61,6 +61,8 @@ Now you have created your local repo that is attached to both the main repo and 
 
 ## Workflow ([shortcuts](#shortcuts) exist )
 
+**It is preferable to use the [workflow with shortcuts](#workflow-with-shortcuts) when working, but please try this section at least one time before heading to the shortcuts section because some stuff are explained here in more details.**
+
 When there is a feature/bug you need to make/fix you should do that as follow (this are the steps you will always follow when there is something you want to work on):
 
 1. Open git shell and go to the local repo directory.
