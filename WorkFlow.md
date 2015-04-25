@@ -132,9 +132,9 @@ Here we will make new git commands that will be shortcuts for our workflow steps
     ```
     [alias]
     ls = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	startf = !sh -c 'git checkout master && git pull && git push && git config --global credential.helper cache && git checkout -b $0'
-	pushf  = !sh -c 'git checkout $0 && git push -u origin $0 && git config --global credential.helper cache' 
-	finishf = !sh -c 'git checkout $0  && git checkout master && git pull && git push && git config --global credential.helper cache && git push --delete origin $0 && git branch -D $0'
+startf = !sh -c 'git checkout master && git pull && git checkout -b $0'
+pushf  = !sh -c 'git checkout $0 && git push -u origin $0 && git config --global credential.helper cache' 
+finishf = !sh -c 'git checkout $0  && git checkout master && git pull && git push && git config --global credential.helper cache && git push --delete origin $0 && git branch -D $0 '
     ```
 
 Thats it. Now you have the following commands (you can use them in the workflow as described [here](#workflow-with-shortcuts)):
