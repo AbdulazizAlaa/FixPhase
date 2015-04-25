@@ -171,7 +171,7 @@ First lets add more shortcuts that will help us in merging so add the follwing l
 
 ```
 getpull = "!sh -c 'git remote add $0 $1; git fetch $0 && git checkout -b $0-$2 $0/$2'"
-mergepull = !sh -c 'git checkout master && (git merge-base --is-ancestor master $0-$1 || (echo "rebase first" && false))  && git merge --no-ff -m "Merge pull request #$2 from $0/$1" $0-$1 && git push && git config --global credential.helper cache && git branch -D $0 '
+mergepull = "!sh -c 'git checkout master && (git merge-base --is-ancestor master $0-$1 || (echo "rebase first" && false))  && git merge --no-ff -m \"Merge pull request #$2 from $0/$1\" $0-$1 && git push && git config --global credential.helper cache && git branch -D $0-$1'"
 ```
 
 Before starting open your browser to the pull request page the picture below shows all the things we will use.
@@ -179,7 +179,7 @@ Before starting open your browser to the pull request page the picture below sho
 ![image](https://cloud.githubusercontent.com/assets/5361308/7332600/6b51b080-eb4f-11e4-92d9-721335b5ce5e.png)
 
 
-There are 2 things that should be done when merging a pull request:
+There are 3 things that should be done when merging a pull request:
 
 1. Get the pull request branch locally to test using `git getpull <user> <url> <pull_branch>` (get argumnets from picture), now you can test the branch locally and if there is something wrong head back to the pull request page and dicuss it with the developer.
 
@@ -195,7 +195,10 @@ There are 2 things that should be done when merging a pull request:
     ```
     git mergepull <user> <pull_branch> <pull_id>
     ```
-    
+3. Manually close the pull request with a merged comment as shown below. (Optionally you can add the merge commit hash to your comment)
+
+    ![image](https://cloud.githubusercontent.com/assets/5361308/7332814/e1947ff4-eb5c-11e4-9621-6a27bcc39837.png)
+
 **NOTE**: it is possible when pushing to the remote that some one had made changes and it wont let you push till you sync with remote to do so type the following:
 
 ```
