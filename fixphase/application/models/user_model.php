@@ -3,43 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class user_model extends CI_Model{
 
-    //function to insert a new user in the database
-    //<===========WORK==========>
-    //you can not use "$this->input->post('Fname')" such input functions
-    //in the model this should be handled in the controller and then you call
-    //your function with parameters
-    //so the function should be public function insert_user($fname, $lname, $username, $password, $email)
-    //in the model you don't echo anything you should return some thing
-    //like if you only have two options either to insert or to fail
-    //if the action was successful you should return true either return false
-    //if you have more alternatives you should return a discribtive string
-    //<===========WORK==========>
     //<===========Ali & Bassem=============>
-    public function insert_user()
+    public function insert_user($data)
     {
-      $fname= strtolower($this->input->post('Fname'));
-      $lname= strtolower($this->input->post('Lname'));
-      $data = array(
-        'username'=> strtolower($this->input->post('username')),
-        'password'=> strtolower($this->input->post('password')),
-
-        'email'=> strtolower($this->input->post('email')),
-        'full_name'=> $fname . " " . $lname
-      );
-
-
       $query = $this->db->insert('users',$data);
-      if($query)
-      {
-        //use a discribtive message please :D :D
-        echo "3aab 3alaak";
+      if($query){
+        return true;
+      }else{
+        return false;
       }
-      else
-      {
-        //same here
-        echo "bdan naak";
-      }
-
     }
 
     //<============Moataz============>
@@ -109,29 +81,4 @@ class user_model extends CI_Model{
             return false;
         }
     }
-
-#    public function insert_user()
-#    {
-#    $fname= strtolower($this->input->post('Fname'));
-#    $lname= strtolower($this->input->post('Lname'));
-#    $data = array(
-#    'username'=> strtolower($this->input->post('username')),
-#    'password'=> strtolower($this->input->post('password')),
-
-#    'email'=> strtolower($this->input->post('email')),
-#     'full_name'=> $fname . " " . $lname
-#    );
-
-
-#    $query = $this->db->insert('users',$data);
-#    if($query)
-#    {
-#     echo "3aab 3alaak";
-#    }
-#        else
-#     {
-#       echo "bdan naak";
-#     }
-
-#    }
 }
