@@ -20,16 +20,15 @@
             $attr = array('class' => '', 'id' => '');
             echo form_open('Login/validate', $attr);
             ?>
-            <?php if(! is_null($msg)) echo $msg;?><br/><br/>
                 <div class="login">
-
+                    <?php if(! is_null($msg)) echo $msg;?><br/><br/>
                     <div class="form-group">
                         <?php
                         $attr = array(
-                            'type' => 'email',
+                            'type' => 'email|username',
                             'class' => 'form-control',
                             'id' => 'email',
-                            'placeholder' => 'Email Address',
+                            'placeholder' => 'Email Address Or User Name',
                             'name' => 'user_email'
                         );
                         echo form_input($attr);
@@ -67,7 +66,7 @@
                             <a href= <?php echo base_url().'Register' ?> >SIGN UP</a>
                         </div>
                         <div class="col-md-4" id="forgetpass">
-                            <a href="#">Forget Password</a>
+                            <a href= <?php echo base_url().'Login/forget_password' ?> >Forget Password</a>
                         </div>
                     </div>
             <?php echo form_close();?>
