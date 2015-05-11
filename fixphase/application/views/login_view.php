@@ -3,6 +3,8 @@
     <head>
         <link href=<?php echo base_url()."assets/css/bootstrap.min.css";?> type="text/css" rel="stylesheet" />
         <link href=<?php echo base_url()."assets/css/login.css";?> type="text/css" rel="stylesheet" />
+
+        <script src= <?php echo base_url()."assets/lib/jquery/jquery.js" ;?> ></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Login</title>
     </head>
@@ -20,6 +22,7 @@
             $attr = array('class' => '', 'id' => '');
             echo form_open('Login/validate', $attr);
             ?>
+            <form class="" id="" method="post" action="Login/validate">
                 <div class="login">
                     <?php if(! is_null($msg)) echo $msg;?><br/><br/>
                     <div class="form-group">
