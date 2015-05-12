@@ -8,6 +8,7 @@ requirejs.config({
         //config
         routes: "config/routes",
         api: "config/api",
+        bootstrap:"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min",
 
 
         //framework
@@ -23,13 +24,15 @@ requirejs.config({
         widget: "../lib/core/widget",
         store: "../lib/core/store",
         promise: "../lib/core/promise",
-        reloader: "../lib/core/reloader"
+        reloader: "../lib/core/reloader",
+        "jquery-ui": "../lib/jquery-ui/ui",
+        smoothness: "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui"
 
     }
 });
 
 
-require(["core","router","routes"], function(core,router,routes){
+require(["core","router","routes", ,"jquery-ui/dialog","css!bootstrap","css!smoothness"], function(core,router,routes){
     //Register the routes in the router library
     router.registerRoutes(routes);
 
