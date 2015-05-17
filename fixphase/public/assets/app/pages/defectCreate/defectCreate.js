@@ -28,8 +28,6 @@ define(
 
 
                 defectForm.submit(function (e) {
-                    e.preventDefault();
-
                     var defectData = {
                         'headline':headline.val(),
                         'releasename':releaseName.val(),
