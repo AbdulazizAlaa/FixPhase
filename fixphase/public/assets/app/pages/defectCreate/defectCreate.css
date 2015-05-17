@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+    background-color:#f3f3f3;
+}
+* {
+    margin:0;
+}
+.form{
+    margin-top:3%;
+}
+.project{
+    height:60px;
+    width:100%;
+    background-color:#0d1925;
+}
+.project h3{
+    position:absolute;
+    left:50px;
+    color:#ff7583;
+}
+.defect h3{
+    position:absolute;
+    left:150px;
+    top:130px;
+    color:#ff7583;
+
+}
+
+.defect h4{
+    margin-top:40px;
+    margin-left:150px;
+
+}
+.adddefect h3{
+    position:absolute;
+    left:165px;
+    color:#ff7583;
+}
+.fill-form {
+    margin-left:10%;
+    width:30%;
+    border-width:1px;
+    border-radius:30px;
+
+
+
+}
+.text-area{
+    position:absolute;
+    left:170px;
+}
+
+.role{
+    margin-left:10%;
+    width:30%;
+    border-width:1px;
+    border-radius:30px;
+}
+#headline{
+    margin-top: 5%;
+}
+.form-group{
+    margin-top: 20px;
+}
+.fill-form .role :focus{
+    border-color:#225ba7;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,0,100,.6)
+}
+
+
+
+.btn-warning{
+    position:absolute;
+    margin-top:13%;
+    left:15%;
+    width:10%;
+    opacity:0.8;
+    border-color:#0d1a23;
+    background-color:#0d1a23;
+    color:#fff;
+}
+
+
+.btn-warning:hover {
+    border-color:#0d1a23;
+    opacity:1;
+    background-color:#0d1a23;
+    color:#fff;
+}

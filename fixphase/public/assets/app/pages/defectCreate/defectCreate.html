@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="defectCreate.css" type="text/css" rel="stylesheet" />
+    <script src="assets/lib/jquery/jquery.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Add defect</title>
 </head>
+
 <body>
+
+<div id="create-defect-page">
+    <div class="project">
+        <h3>Project</h3>
+    </div>
+
+    <div class="adddefect">
+        <h3>Add Defect</h3>
+    </div>
+
+    <div class="form">
+        <form method="post" id="create-defect-form">
+            <div class="form-group">
+
+                <input type="text" class="form-control fill-form" id="headline" placeholder="Headline" name="headline">
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control fill-form" id="releasename" placeholder="Release Name" name="releasename">
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control fill-form" id="releaseversion" placeholder="Release Version" name="releaseversion">
+            </div>
+
+            <div class="form-group">
+                <select class="form-control role" id="severity-role">
+                    <option selected="true" style="display:none;">Severity</option>
+                    <option value="tester">High</option>
+                    <option value="developer">Medium</option>
+                    <option value="tester_man">Low</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control role" id="priority-role">
+                    <option selected="true" style="display:none;">Priority</option>
+                    <option value="tester">High</option>
+                    <option value="developer">Medium</option>
+                    <option value="tester_man">Low</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select class="form-control role" id="product-role">
+                    <option selected="true" style="display:none;">Product</option>
+                    <option value="tester">Product1</option>
+                    <option value="developer">Product2</option>
+                    <option value="tester_man">Product3</option>
+                </select>
+            </div>
+
+            <div class="text-area">
+                <textarea rows="8" cols="50" placeholder="Description" id="defect-desc"></textarea>
+            </div>
+
+            <button type="submit" value="ok" class="btn btn-warning" id="submit-defect">Submit</button>
+
+        </form>
+
+    </div>
+</div>
 
 </body>
 </html>
